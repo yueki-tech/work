@@ -9,6 +9,8 @@
 
 ■try～with～resource構文
 
+JavaSE8から追加された Stream API は AutoCloseable を実装しているのでtry-with-resources文で利用可能。
+
 try (SampleBufferedReader br = new SampleBufferedReader();
      SampleFileReader fr = new SampleFileReader()) {
     // 処理
@@ -16,4 +18,10 @@ try (SampleBufferedReader br = new SampleBufferedReader();
     // 処理
 } finally {
     // 処理
+}
+
+try (Stream<String> stream = Files.lines(Paths.get("test.txt"), StandardCharsets.UTF_8)) {
+    stream.forEach(System.out::println);
+} catch (IOException e1) {
+    e1.printStackTrace();
 }
