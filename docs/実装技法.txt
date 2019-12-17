@@ -6,3 +6,14 @@
 
 ■locator
 
+
+■try～with～resource構文
+
+try (SampleBufferedReader br = new SampleBufferedReader();
+     SampleFileReader fr = new SampleFileReader()) {
+    // 処理
+} catch (IOException e) {
+    // 処理
+} finally {
+    // 処理
+}
