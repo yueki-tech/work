@@ -1,6 +1,8 @@
 SpringValidatorの実装方法　※TERASOLUNAフレームワークのガイドラインより抜粋
 
 ■Validatorクラス
+※supportsメソッドでフォームクラスをチェックし、validateメソッドで相関チェックを実装する。
+
 package com.example.sample.app.validation;
 
 import org.springframework.stereotype.Component;
@@ -34,6 +36,8 @@ public class PasswordEqualsValidator implements Validator {
 }
 
 ■Controllerクラス
+※@Autowired(@Inject)でValidatorをインジェクションし、@InitBinderでバインドする。
+
 package com.example.sample.app.validation;
 
 import javax.inject.Inject;
@@ -83,6 +87,8 @@ public class PasswordResetController {
 }
 
 ■JSP
+※特別な実装は無し。
+
 <!DOCTYPE html>
 <html>
 <%-- WEB-INF/views/password/resetForm.jsp --%>
