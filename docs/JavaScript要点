@@ -80,6 +80,10 @@
 }
 
 ■日付操作
+　new Date()で作成。
+　■時間取得
+　　・getTime()はタイムゾーンに依存しない数値型の値
+　　・getHour()やgetMinute()などはタイムゾーンに依存する値
 　■日時整形
 'use strict';
 {
